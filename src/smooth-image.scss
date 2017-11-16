@@ -1,16 +1,16 @@
-image-container {
+smooth-image {
   display: block;
   height: 100%;
 }
 
-.image-container {
+.smooth-image {
   position: relative;
   height: 100%;
   display: block;
 
   .background-image {
     background-repeat: no-repeat;
-    background-size: cover; //stretch to fit
+    background-size: cover;
     background-position: center;
     position: absolute;
     left: 0;
@@ -25,9 +25,9 @@ image-container {
     bottom: 0;
     right: 0;
     top: 0;
-    background-color: $rebrand-white;
+    background-color: rgba(0,0,0,0.1);
     opacity: 1;
-    transition: opacity ease-out 150ms;
+    transition: opacity ease-out 350ms;
     will-change: opacity;
   }
 }

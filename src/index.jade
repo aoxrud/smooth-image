@@ -6,10 +6,17 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0")
     title Smooth Image
 
-    link(rel="prefetch", href="/api/v2/cmx/members/~")
     script(src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js")
+    script(src="./smooth-image.component.js")
+    link(href="./smooth-image.css", rel="stylesheet")
 
+    style.
+      smooth-image {
+        width: 200px;
+        height: 200px;
+      }
   body
+
     .smooth-image-body(ng-app="smooth-image")
       ul
         li

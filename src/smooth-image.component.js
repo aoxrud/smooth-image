@@ -16,6 +16,7 @@ angular.module('smooth-image', [])
   }
 
   processIntersections(intersections) {
+
     intersections.forEach(entry => {
       if(entry.isIntersecting) {
         const imageId = entry.target._imageId;
@@ -44,12 +45,12 @@ angular.module('smooth-image', [])
     }
   }
 })
-.component('imageContainer', {
+.component('smoothImage', {
   bindings: {
     image: '@'
   },
   template: `
-    <div class='image-container'>
+    <div class='smooth-image'>
       <div class='background-image'></div>
       <div class='is-preloading'></div>
     </div>
@@ -65,13 +66,11 @@ angular.module('smooth-image', [])
 
     $onInit() {
       this.$preload.style.opacity = 1;
-      this.$bg.style.backgroundImage = `url("${this.image}")`;
     }
 
     $onDestroy() {
       this.SmoothImageService.unobserve(this.$el);
     }
-
 
     $postLink() {
       this.SmoothImageService.observe(this.$el, () => {
@@ -84,6 +83,7 @@ angular.module('smooth-image', [])
           image.onload = () => this.imageLoaded();
         }
 
+        this.$bg.style.backgroundImage = `url("${this.image}")`;
         this.SmoothImageService.unobserve(this.$el);
       });
     }
