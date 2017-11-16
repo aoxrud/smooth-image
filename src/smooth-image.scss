@@ -1,0 +1,33 @@
+image-container {
+  display: block;
+  height: 100%;
+}
+
+.image-container {
+  position: relative;
+  height: 100%;
+  display: block;
+
+  .background-image {
+    background-repeat: no-repeat;
+    background-size: cover; //stretch to fit
+    background-position: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+  }
+
+  .is-preloading {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    background-color: $rebrand-white;
+    opacity: 1;
+    transition: opacity ease-out 150ms;
+    will-change: opacity;
+  }
+}
